@@ -1,3 +1,4 @@
+const { check, validationResult } = require('express-validator/check')
 const express = require('express')
 const router = express.Router()
 const { actions, User } = require('../models')
@@ -5,13 +6,28 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 const privateKey = 'secret'
 
-router.post('/', async (req, res) => {
+const validator = [
+  check('email', 'Must be an email')
+    .isEmail()
+    .trim()
+    .normalizeEmail(),
+  check('password', 'passwords must be at least 5 chars long and contain one number')
+    .isLength({ min: 5 })
+    .matches(/\d/)
+]
+
+router.post('/', validator, async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(422).json({ errors: errors.mapped() });
+  }
+
   try {
     const user = await actions.findUser({ email: req.body.email })
-    if (user.length === 0)
+    if (!user)
       return res.status(401).json({ message: `User with email ${req.body.email} not found!` })
 
-    const passwordMatch = await bcrypt.compare(req.body.password, user[0].password)
+    const passwordMatch = await bcrypt.compare(req.body.password, user.password)
     if (!passwordMatch)
       return res.status(401).json({ message: "Wrong password!" })
 
@@ -21,10 +37,12 @@ router.post('/', async (req, res) => {
       _id: user._id
     }
 
+    const token = jwt.sign(tokenData, privateKey)
+
     res.json({
       username: user.username,
       email: user.email,
-      token: jwt.sign(tokenData, privateKey, { expiresIn: '168h' })
+      token: token
     })
   } catch (e) {
     throw new Error(e)

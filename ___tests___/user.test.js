@@ -67,4 +67,32 @@ describe("Auth User", () => {
       throw new Error(e)
     }
   })
+
+  it("should be return 401", async () => {
+    try {
+      await request(app)
+      .post("/auth")
+      .send({
+        email: "randomemail@gmail.com",
+        password: "lolpassword888"
+      })
+      .expect(401)
+    } catch(e) {
+      throw new Error(e)
+    }
+  })
+
+  it("should be return 422", async () => {
+    try {
+      await request(app)
+      .post("/auth")
+      .send({
+        email: "worngemail",
+        password: "wrong password format"
+      })
+      .expect(422)
+    } catch(e) {
+      throw new Error(e)
+    }
+  })
 })

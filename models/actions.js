@@ -1,4 +1,5 @@
 const User = require('./User')
+const Article = require('./Article')
 const bcrypt = require('bcrypt')
 const saltRounds = 10;
 
@@ -22,7 +23,7 @@ module.exports = {
   // find user
   findUser: (obj) => {
     return new Promise((resolve, reject) => {
-      User.find(obj, (err, user) => {
+      User.findOne(obj, (err, user) => {
         if (err) reject(err)
 
         resolve(user)
@@ -70,6 +71,20 @@ module.exports = {
           resolve(updatedUser)
         })
       })
+    })
+  },
+
+
+  // articles
+  createArticle: (payload) => {
+    return new Promise((resolve, reject) => {
+      const article = new Article()
+
+      article.author = payload.author
+      article.slug = payload.slug
+      article.data = payload.data
+
+      article.save(err => err ? reject(err) : resolve(article))
     })
   }
 }

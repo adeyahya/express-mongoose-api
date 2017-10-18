@@ -14,5 +14,6 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => res.send('hello'))
 app.use('/register', router.register)
 app.use('/auth', router.auth)
+app.use('/api/article', router.article)
 
 module.exports = app

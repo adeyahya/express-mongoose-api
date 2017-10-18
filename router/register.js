@@ -10,7 +10,7 @@ const validator = [
     .normalizeEmail()
     .custom(value => {
       return actions.findUser({email: value}).then(user => {
-        if (user.length > 0)
+        if (user)
           throw new Error("this email is already in used")
 
         return value
@@ -25,7 +25,7 @@ const validator = [
     })
     .custom(value => {
       return actions.findUser({username: value}).then(user => {
-        if (user.length > 0)
+        if (user)
           throw new Error('this username is already taken')
 
         return value
