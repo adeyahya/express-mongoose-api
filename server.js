@@ -10,12 +10,9 @@ mongoose.connect("mongodb://localhost/idnapi", {useMongoClient: true})
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/', (req, res, next) => {
-  res.json({
-    message: 'hello world'
-  })
-})
+// register routes
+app.get('/', (req, res) => res.send('hello'))
 app.use('/register', router.register)
-
+app.use('/auth', router.auth)
 
 module.exports = app
