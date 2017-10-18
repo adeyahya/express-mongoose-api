@@ -1,14 +1,21 @@
 const User = require('./User')
+const bcrypt = require('bcrypt')
+const saltRounds = 10;
+
 module.exports = {
   // create user
-  createUser: (obj) => {
+  createUser: async (obj) => {
+    // Hashing password
+    const data = Object.assign({}, obj, {
+      password: await bcrypt.hash(obj.password, saltRounds)
+    })
+
     return new Promise((resolve, reject) => {
       const user = new User()
-      // const newUser = Object.assign({}, user, obj)
-      user.name = obj.name
-      user.username = obj.username
-      user.email = obj.email
-      user.password = obj.password
+      user.name = data.name
+      user.username = data.username
+      user.email = data.email
+      user.password = data.password
       user.save(err => err ? reject(err) : resolve(user))
     })
   },
@@ -50,4 +57,19 @@ module.exports = {
       })
     })
   },
+  // update user
+  updateUser: (obj, objToChange) => {
+    return new Promise((resolve, reject) => {
+      User.findOne(obj, (err, user) => {
+        if (err) reject(err)
+
+        const updatedUser = Object.assign(user, objToChange)
+        updatedUser.save((err) => {
+          if (err) reject(err)
+
+          resolve(updatedUser)
+        })
+      })
+    })
+  }
 }

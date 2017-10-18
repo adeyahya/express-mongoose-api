@@ -2,21 +2,12 @@ const request = require('supertest')
 const app = require('../server.js')
 const { actions } = require('../models')
 
-describe('Root', () => {
-  it('Should return 200', async () => {
-    await request(app)
-      .get("/")
-      .expect(200)
-  })
-})
-
-
 describe('Register User', () => {
   const data = {
-    username: 'adeyahya',
-    email: 'adeyahyaprasetyo@gmail.com',
-    password: 'islamisme123',
-    name: 'ade yahya'
+    username: 'johndoe',
+    email: 'johndoe@gmail.com',
+    password: 'supersecret666',
+    name: 'John Doe'
   }
 
   afterAll(async () => {
@@ -32,6 +23,7 @@ describe('Register User', () => {
       .expect(200)
       .expect((res) => {
         expect(res.body.email).toEqual(data.email)
+        expect(res.body.password === data.password).toBeFalsy()
       })
   })
 })
