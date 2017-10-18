@@ -1,7 +1,12 @@
 {
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "jest --watch"
+  },
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
+    "express-validator": "^4.2.1",
     "jsonwebtoken": "^8.1.0",
     "lodash": "^4.17.4",
     "mongoose": "^4.12.2",
