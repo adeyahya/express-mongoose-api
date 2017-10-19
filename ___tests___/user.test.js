@@ -96,3 +96,15 @@ describe("Auth User", () => {
     }
   })
 })
+
+describe("Get all users", () => {
+  it("should return 200", async () => {
+    try {
+      await request(app)
+        .get("/api/users")
+        .expect(200)
+    } catch(e) {
+      throw new Error(e)
+    }
+  })
+})

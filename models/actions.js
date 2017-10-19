@@ -21,6 +21,15 @@ module.exports = {
     })
   },
   // find user
+  findUsers: () => {
+    return new Promise((resolve, reject) => {
+      User.find((err, users) => {
+        if (err) reject(err)
+
+        resolve(users)
+      })
+    })
+  },
   findUser: (obj) => {
     return new Promise((resolve, reject) => {
       User.findOne(obj, (err, user) => {
