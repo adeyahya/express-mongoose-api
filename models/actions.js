@@ -80,11 +80,45 @@ module.exports = {
     return new Promise((resolve, reject) => {
       const article = new Article()
 
+      article.title = payload.title
       article.author = payload.author
       article.slug = payload.slug
       article.data = payload.data
 
       article.save(err => err ? reject(err) : resolve(article))
+    })
+  },
+
+  destroyArticle: (payload) => {
+    return new Promise((resolve, reject) => {
+      Article.remove(payload, (err, article) => {
+        if (err) reject(err)
+
+        resolve(article)
+      })
+    })
+  },
+
+  showArticle: (payload) => {
+    return new Promise((resolve, reject) => {
+      Article.findOne(payload)
+        .populate({ path:'author', select: '_id name email username' })
+        .exec((err, article) => {
+        if (err) reject(err)
+
+        resolve(article)
+      })
+    })
+  },
+
+  updateArticle: (obj, objToChange) => {
+    return new Promise((resolve, reject) => {
+      Article.findOne(obj, (err, article) => {
+        if (err) reject(err)
+
+        const updatedArticle = Object.assign(article, objToChange)
+        updatedArticle.save(err => err ? reject(err) : resolve(updatedArticle))
+      })
     })
   }
 }
