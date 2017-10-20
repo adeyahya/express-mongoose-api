@@ -101,3 +101,16 @@ describe("Update article", () => {
     }
   })
 })
+
+describe("Delete article", () => {
+  it("Should return 200", async () => {
+    try {
+      await request(app)
+        .delete(`/api/article/${slug}`)
+        .set('x-auth-token', token)
+        .expect(200)
+    } catch(e) {
+      throw new Error(e)
+    }
+  })
+})

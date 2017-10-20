@@ -15,5 +15,6 @@ app.get('/', (req, res) => res.send('hello'))
 app.use('/register', router.register)
 app.use('/auth', router.auth)
 app.use('/api/article', router.article)
+app.use('/api/users', router.user)
 
 module.exports = app

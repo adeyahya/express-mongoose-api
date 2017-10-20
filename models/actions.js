@@ -23,7 +23,9 @@ module.exports = {
   // find user
   findUsers: () => {
     return new Promise((resolve, reject) => {
-      User.find((err, users) => {
+      User.find()
+      .select("-password")
+      .exec((err, users) => {
         if (err) reject(err)
 
         resolve(users)
@@ -111,7 +113,7 @@ module.exports = {
   showArticle: (payload) => {
     return new Promise((resolve, reject) => {
       Article.findOne(payload)
-        .populate({ path:'author', select: '_id name email username' })
+        .populate({ path:'author', select: '-password' })
         .exec((err, article) => {
         if (err) reject(err)
 

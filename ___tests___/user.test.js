@@ -108,3 +108,18 @@ describe("Get all users", () => {
     }
   })
 })
+
+describe("get user", () => {
+  it("should return 200", async () => {
+    try {
+      const user = await request(app)
+        .get(`/api/users/${data.username}`)
+        .expect(200)
+        .expect(res => {
+          expect(res.body.email).toEqual(data.email)
+        })
+    } catch(e) {
+      throw new Error(e)
+    }
+  })
+})

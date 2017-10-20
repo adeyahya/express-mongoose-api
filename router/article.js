@@ -21,7 +21,7 @@ router.post('/', authMiddleware, async (req, res) => {
 
     res.json(article)
   } catch(e) {
-    res.status(500).json({
+    res.status(401).json({
       message: e
     })
   }
@@ -39,7 +39,7 @@ router.get('/:slug', async (req, res) => {
 
     return res.json(article)
   } catch(e) {
-    res.status(500).json({message: e})
+    res.status(401).json({message: e})
   }
 })
 
@@ -63,7 +63,33 @@ router.patch('/:slug', authMiddleware, async (req, res) => {
     return res.json(updatedArticle)
 
   } catch(e) {
-    return res.status(500).json({message: e})
+    return res.status(401).json({message: e})
+  }
+})
+
+router.delete('/:slug', authMiddleware, async (req, res) => {
+  try {
+    const article = await actions.showArticle({slug: req.params.slug})
+
+    if (!article) {
+      return res.status(404).json({
+        message: 'article not found'
+      })
+    }
+
+    if (article.author.username != req.decoded.username) {
+      return res.status(401).json({
+        message: "this article not belongs to you"
+      })
+    }
+
+    await actions.destroyArticle({_id: article._id})
+    return res.json({
+      message: 'success deleted article'
+    })
+
+  } catch(e) {
+    return res.status(401).json({message: e})
   }
 })
 
