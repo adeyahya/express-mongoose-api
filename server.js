@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const router = require('./router')
 mongoose.Promise = global.Promise
-mongoose.connect("mongodb://localhost/idnapi", {useMongoClient: true})
+mongoose.connect("mongodb://mongo:27017", {useMongoClient: true})
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
