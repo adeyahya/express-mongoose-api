@@ -5,7 +5,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "bcrypt": "^1.0.3",
+    "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "express-validator": "^4.2.1",
