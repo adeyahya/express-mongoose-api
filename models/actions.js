@@ -1,6 +1,6 @@
 const User = require('./User')
 const Article = require('./Article')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt-nodejs')
 const saltRounds = 10;
 
 module.exports = {
