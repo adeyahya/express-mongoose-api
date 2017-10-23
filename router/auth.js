@@ -3,7 +3,7 @@ const express = require('express')
 const router = express.Router()
 const { actions, User } = require('../models')
 const jwt = require('jsonwebtoken')
-const bcrypt = require('bcrypt-nodejs')
+const bcrypt = require('bcryptjs')
 const privateKey = 'secret'
 
 const validator = [

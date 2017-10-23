@@ -12,3 +12,9 @@ services:
     image: mongo:latest
     ports:
       - 27017:27017
+    volumes_from:
+      - mongodata
+  mongodata:
+    image: tianon/true
+    volumes:
+      - ./db:/data/db
