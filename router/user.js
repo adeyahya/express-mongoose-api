@@ -1,10 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const { actions } = require('../models')
+const userAction = require("../actions/user-action")
 
 router.get('/', async (req, res) => {
   try {
-    const users = await actions.findUsers()
+    const users = await userAction.get()
     res.json(users)
   } catch(e) {
     res.status(401)
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:username', async (req, res) => {
   try {
-    const user = await actions.findUser({username: req.params.username})
+    const user = await userAction.find({username: req.params.username})
     res.json(user)
   } catch (e) {
     res.status(401)

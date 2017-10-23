@@ -1,7 +1,7 @@
 const { check, validationResult } = require('express-validator/check')
 const express = require('express')
 const router = express.Router()
-const { actions, User } = require('../models')
+const userAction = require('../actions/user-action')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const privateKey = 'secret'
@@ -23,7 +23,7 @@ router.post('/', validator, async (req, res) => {
   }
 
   try {
-    const user = await actions.findUser({ email: req.body.email })
+    const user = await userAction.find({ email: req.body.email })
     if (!user)
       return res.status(401).json({ message: `User with email ${req.body.email} not found!` })
 

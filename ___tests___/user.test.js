@@ -1,6 +1,6 @@
 const request = require('supertest')
 const app = require('../server.js')
-const { actions } = require('../models')
+const userAction = require("../actions/user-action")
 
 const data = {
   username: 'johndoe',
@@ -11,7 +11,7 @@ const data = {
 
 afterAll(async () => {
   try {
-    await actions.destroyUser({
+    await userAction.destroy({
       email: data.email
     })
   } catch (e) {
@@ -101,7 +101,7 @@ describe("Get all users", () => {
   it("should return 200", async () => {
     try {
       await request(app)
-        .get("/api/users")
+        .get("/users")
         .expect(200)
     } catch(e) {
       throw new Error(e)
@@ -113,7 +113,7 @@ describe("get user", () => {
   it("should return 200", async () => {
     try {
       const user = await request(app)
-        .get(`/api/users/${data.username}`)
+        .get(`/users/${data.username}`)
         .expect(200)
         .expect(res => {
           expect(res.body.email).toEqual(data.email)

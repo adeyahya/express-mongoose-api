@@ -1,7 +1,7 @@
 const { check, validationResult } = require('express-validator/check')
 const express = require('express')
 const router = express.Router()
-const { actions, User } = require('../models')
+const userAction = require('../actions/user-action')
 
 const validator = [
   check('email', 'Must be an email')
@@ -9,7 +9,7 @@ const validator = [
     .trim()
     .normalizeEmail()
     .custom(value => {
-      return actions.findUser({email: value}).then(user => {
+      return userAction.find({email: value}).then(user => {
         if (user)
           throw new Error("this email is already in used")
 
@@ -24,7 +24,7 @@ const validator = [
       return value
     })
     .custom(value => {
-      return actions.findUser({username: value}).then(user => {
+      return userAction.find({username: value}).then(user => {
         if (user)
           throw new Error('this username is already taken')
 
@@ -43,7 +43,7 @@ router.post('/', validator, async (req, res) => {
   }
 
   try {
-    const response = await actions.createUser(req.body)
+    const response = await userAction.create(req.body)
     return res.json(response)
   } catch(err) {
     throw new Error(err)

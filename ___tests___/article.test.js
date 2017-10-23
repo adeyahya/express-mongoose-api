@@ -1,6 +1,7 @@
 const request = require('supertest')
 const app = require('../server')
-const { actions, Article } = require('../models')
+const articleAction = require("../actions/article-action")
+const userAction = require("../actions/user-action")
 let token = ''
 let slug = ''
 
@@ -13,7 +14,7 @@ const data = {
 
 beforeAll(async () => {
   try {
-    const user = await actions.createUser(data)
+    const user = await userAction.create(data)
     const response = await request(app)
       .post('/auth')
       .send({
@@ -29,11 +30,23 @@ beforeAll(async () => {
 
 afterAll(async () => {
   try {
-    await actions.destroyUser({email: data.email})
-    await actions.destroyArticle({slug: 'lorem-ipsum'})
+    await userAction.destroy({email: data.email})
+    await articleAction.destroy({slug: 'lorem-ipsum'})
   } catch(e) {
     throw new Error(e)
   }
+})
+
+describe("Get all articles", () => {
+  it("Should return 200", async () => {
+    try {
+      await request(app)
+        .get("/article")
+        .expect(200)
+    } catch(e) {
+      throw new Error(e)
+    }
+  })
 })
 
 describe('Create New Article', () => {
@@ -41,11 +54,11 @@ describe('Create New Article', () => {
     try {
       // without token
       await request(app)
-        .post("/api/article")
+        .post("/article")
         .expect(401)
 
       await request(app)
-        .post("/api/article")
+        .post("/article")
         .set('x-auth-token', token)
         .send({
           title: 'lorem ipsum',
@@ -72,7 +85,7 @@ describe("Show article", () => {
   it("Should return 200", async () => {
     try {
       await request(app)
-      .get(`/api/article/${slug}`)
+      .get(`/article/${slug}`)
       .expect(200)
       .expect(res => {
         expect(typeof res.body.author.email).toEqual('string')
@@ -87,7 +100,7 @@ describe("Update article", () => {
   it("Should return 200 with updated article", async () => {
     try {
       await request(app)
-        .patch(`/api/article/${slug}`)
+        .patch(`/article/${slug}`)
         .set('x-auth-token', token)
         .send({
           title: "new title"
@@ -106,7 +119,7 @@ describe("Delete article", () => {
   it("Should return 200", async () => {
     try {
       await request(app)
-        .delete(`/api/article/${slug}`)
+        .delete(`/article/${slug}`)
         .set('x-auth-token', token)
         .expect(200)
     } catch(e) {
