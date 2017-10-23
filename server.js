@@ -1,5 +1,6 @@
 const config = require('./config')
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
@@ -7,6 +8,7 @@ const router = require('./router')
 mongoose.Promise = global.Promise
 mongoose.connect("mongodb://mongo:27017", {useMongoClient: true})
 
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
