@@ -34,6 +34,8 @@ router.post('/', validator, async (req, res) => {
     const tokenData = {
       username: user.username,
       email: user.email,
+      avatar: user.avatar,
+      name: user.name,
       _id: user._id
     }
 
