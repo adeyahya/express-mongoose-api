@@ -1,6 +1,14 @@
+//@flow
 const Article = require("../models/Article")
 
-exports.get = function() {
+type ArticleType = {
+  title?: string,
+  slug?: string,
+  author?: number,
+  data?: Array<mixed>
+}
+
+exports.get = function(): Promise<any> {
   return new Promise((resolve, reject) => {
     Article.find()
       .populate("author", "_id username name avatar")
@@ -12,7 +20,7 @@ exports.get = function() {
   })
 }
 
-exports.find = function(obj) {
+exports.find = function(obj: ArticleType): Promise<any> {
   return new Promise((resolve, reject) => {
     Article.findOne(obj)
       .populate('author','-password')
@@ -24,7 +32,14 @@ exports.find = function(obj) {
   })
 }
 
-exports.create = function(payload) {
+exports.create = function(
+  payload: {
+    title: string,
+    author: number,
+    slug: string,
+    data: Array<mixed>
+  }
+): Promise<any> {
   return new Promise((resolve, reject) => {
     const article = new Article()
 
@@ -37,7 +52,12 @@ exports.create = function(payload) {
   })
 }
 
-exports.destroy = function(obj) {
+exports.destroy = function(
+  obj: {
+    _id?: string,
+    slug?: string
+  }
+): Promise<any> {
   return new Promise((resolve, reject) => {
     Article.remove(obj, (err, article) => {
       if (err) reject(err)
@@ -47,7 +67,10 @@ exports.destroy = function(obj) {
   })
 }
 
-exports.update = function(obj, objToChange) {
+exports.update = function(
+  obj: ArticleType,
+  objToChange: ArticleType
+): Promise<any> {
   return new Promise((resolve, reject) => {
     Article.findOne(obj, (err, article) => {
       if (err) reject(err)
