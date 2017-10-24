@@ -10,8 +10,6 @@ services:
       - mongo
   mongo:
     image: mongo:latest
-    ports:
-      - 27017:27017
     volumes_from:
       - mongodata
   mongodata:
