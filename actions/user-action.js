@@ -1,6 +1,6 @@
 const User = require("../models/User")
 const bcrypt = require("bcryptjs")
-const saltRounds = 10
+const saltRounds = process.env.SALT_ROUNDS
 
 exports.create = async function(obj) {
   // Hashing password

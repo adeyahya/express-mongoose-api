@@ -1,4 +1,4 @@
-const config = require('./config')
+require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const app = express()
@@ -6,7 +6,11 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const router = require('./router')
 mongoose.Promise = global.Promise
-mongoose.connect("mongodb://mongo:27017", {useMongoClient: true})
+
+const dbUrl = process.env.NODE_ENV === "production"
+  ? process.env.DB_HOST
+  : process.env.DB_HOST_DEVELOPMENT
+mongoose.connect(dbUrl, {useMongoClient: true})
 
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));

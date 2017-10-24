@@ -4,7 +4,7 @@ const router = express.Router()
 const userAction = require('../actions/user-action')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
-const privateKey = 'secret'
+const privateKey = process.env.PRIVATE_KEY
 
 const validator = [
   check('email', 'Must be an email')
