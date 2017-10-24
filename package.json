@@ -1,4 +1,7 @@
 {
+  "name": "express-mongoose-api",
+  "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "start": "babel-node ./bin/www",
     "test": "jest",
