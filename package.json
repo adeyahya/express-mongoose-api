@@ -17,6 +17,7 @@
     "passport-jwt": "^3.0.0"
   },
   "devDependencies": {
+    "flow-bin": "^0.57.3",
     "jest": "^21.2.1",
     "supertest": "^3.0.0"
   }
