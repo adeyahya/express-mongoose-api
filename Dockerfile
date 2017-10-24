@@ -1,5 +1,7 @@
 FROM node:wheezy
 
+ENV NODE_ENV production
+
 RUN mkdir /app
 WORKDIR /app
 
