@@ -17,7 +17,7 @@ module.exports = {
       return res.status(401).json({ message: 'x-auth-token Required' })
 
     try {
-      const decoded = await verifyToken(token, 'secret')
+      const decoded = await verifyToken(token, process.env.PRIVATE_KEY)
       req.decoded = decoded
     } catch(e) {
       return res.status(401).json({ message: 'token invalid' })
