@@ -22,5 +22,6 @@ app.use('/register', router.register)
 app.use('/auth', router.auth)
 app.use('/article', router.article)
 app.use('/users', router.user)
+app.use('/photos', router.photo)
 
 module.exports = app
