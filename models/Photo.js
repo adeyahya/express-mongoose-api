@@ -1,6 +1,11 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 const PhotoSchema = Schema({
+  originalname: String,
+  encoding: String,
+  mimetype: String,
+  filename: String,
+  size: Number,
   author: {
     type: Schema.Types.ObjectId, ref: "User"
   },
@@ -9,7 +14,7 @@ const PhotoSchema = Schema({
   color: String,
   url: {
     small: String,
-    medium: String,
+    regular: String,
     original: String
   }
 })

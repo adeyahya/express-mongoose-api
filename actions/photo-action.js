@@ -11,3 +11,16 @@ exports.get = function() {
       })
   })
 }
+
+exports.create = function(obj) {
+  return new Promise((resolve, reject) => {
+    let photo = new Photo()
+    Object.assign(photo, obj)
+
+    photo.save((err, photo) => {
+      if (err) reject(err)
+
+      resolve(photo)
+    })
+  })
+}
