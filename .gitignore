@@ -1,2 +1,17 @@
 /node_modules
 *.DS_Store
+
+/uploads/*/*.jpg
+/uploads/*.jpg
+
+/uploads/*/*.png
+/uploads/*.png
+
+/uploads/*/*.gif
+/uploads/*.gif
+
+/uploads/*/*.jpeg
+/uploads/*.jpeg
+
+/uploads/*/*.webm
+/uploads/*.webm
