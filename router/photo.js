@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 const path = require("path")
 const photoAction = require("../actions/photo-action")
+const { authMiddleware } = require("./middleware")
 
 const multer  = require('multer')
 const Vibrant = require('node-vibrant');
@@ -31,7 +32,7 @@ router.get("/", async (req, res) => {
   }
 })
 
-router.post("/", upload.single('photo'), (req, res) => {
+router.post("/", authMiddleware, upload.single('photo'), (req, res) => {
   // @TODO: covert rgb to hex in color
   // add authentication
   // add middleware for size limit
@@ -61,6 +62,7 @@ router.post("/", upload.single('photo'), (req, res) => {
         mimetype: req.file.mimetype,
         filename: req.file.filename,
         size: req.file.size,
+        author: req.decoded._id,
         color: `rgb(${vibrant[0]},${vibrant[1]},${vibrant[2]})`,
         url: {
           small: `/uploads/small/${req.file.filename}`,
