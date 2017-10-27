@@ -9,7 +9,7 @@ mongoose.Promise = global.Promise
 
 const dbUrl = process.env.NODE_ENV === "production"
   ? process.env.DB_HOST
-  : "mongodb://localhost/dummy"
+  : process.env.DB_HOST_DEVELOPMENT
 mongoose.connect(dbUrl, {useMongoClient: true})
 
 app.use(cors())
