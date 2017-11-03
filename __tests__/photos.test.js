@@ -78,14 +78,14 @@ describe("Upload photo", () => {
   });
 });
 
-describe("Show photo", () => {
-  it("Should return 200", async () => {
-    try {
-      await request(app)
-        .get(`/photos/${photoid}`)
-        .expect(200);
-    } catch (e) {
-      throw new Error(e);
-    }
-  });
-});
+// describe("Show photo", () => {
+//   it("Should return 200", async () => {
+//     try {
+//       await request(app)
+//         .get(`/photos/${photoid}`)
+//         .expect(200);
+//     } catch (e) {
+//       throw new Error(e);
+//     }
+//   });
+// });
