@@ -24,3 +24,15 @@ exports.create = function(obj) {
     })
   })
 }
+
+exports.find = function(obj) {
+  return new Promise((resolve, reject) => {
+    Photo.findOne(obj)
+      .populate("author", "-password")
+      .exec((err, photo) => {
+        if (err) reject(err)
+
+        resolve(photo)
+      })
+  })
+}

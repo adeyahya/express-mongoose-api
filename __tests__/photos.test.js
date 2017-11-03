@@ -3,7 +3,7 @@ const request = require("supertest")
 const articleAction = require("../actions/article-action")
 const userAction = require("../actions/user-action")
 let token = ''
-let slug = ''
+let photoid = ''
 
 const data = {
   username: "johndoeng",
@@ -68,6 +68,21 @@ describe("Upload photo", () => {
         .post("/photos")
         .set('x-auth-token', token)
         .attach("photo", "__tests__/dummy.jpg")
+        .expect(200)
+        .expect(res => {
+          photoid = res._id
+        })
+    } catch(e) {
+      throw new Error(e)
+    }
+  })
+})
+
+describe("Show photo", () => {
+  it("Should return 200", async () => {
+    try {
+      await request(app)
+        .get(`/photos/${photoid}`)
         .expect(200)
     } catch(e) {
       throw new Error(e)

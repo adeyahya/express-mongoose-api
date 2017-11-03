@@ -32,6 +32,15 @@ router.get("/", async (req, res) => {
   }
 })
 
+router.get("/:photoid", async (req, res) => {
+  try {
+    const photo = await photoAction.find({_id: req.params.photoid})
+    return res.json(photo)
+  } catch(e) {
+    return res.status(500).json(e)
+  }
+})
+
 router.post("/", authMiddleware, upload.single('photo'), (req, res) => {
   // @TODO: covert rgb to hex in color
   // add authentication
