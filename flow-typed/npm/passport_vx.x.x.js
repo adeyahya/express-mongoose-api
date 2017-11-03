@@ -13,7 +13,7 @@
  * https://github.com/flowtype/flow-typed
  */
 
-declare module 'passport' {
+declare module "passport" {
   declare module.exports: any;
 }
 
@@ -22,67 +22,67 @@ declare module 'passport' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module 'passport/lib/authenticator' {
+declare module "passport/lib/authenticator" {
   declare module.exports: any;
 }
 
-declare module 'passport/lib/errors/authenticationerror' {
+declare module "passport/lib/errors/authenticationerror" {
   declare module.exports: any;
 }
 
-declare module 'passport/lib/framework/connect' {
+declare module "passport/lib/framework/connect" {
   declare module.exports: any;
 }
 
-declare module 'passport/lib/http/request' {
+declare module "passport/lib/http/request" {
   declare module.exports: any;
 }
 
-declare module 'passport/lib/index' {
+declare module "passport/lib/index" {
   declare module.exports: any;
 }
 
-declare module 'passport/lib/middleware/authenticate' {
+declare module "passport/lib/middleware/authenticate" {
   declare module.exports: any;
 }
 
-declare module 'passport/lib/middleware/initialize' {
+declare module "passport/lib/middleware/initialize" {
   declare module.exports: any;
 }
 
-declare module 'passport/lib/sessionmanager' {
+declare module "passport/lib/sessionmanager" {
   declare module.exports: any;
 }
 
-declare module 'passport/lib/strategies/session' {
+declare module "passport/lib/strategies/session" {
   declare module.exports: any;
 }
 
 // Filename aliases
-declare module 'passport/lib/authenticator.js' {
-  declare module.exports: $Exports<'passport/lib/authenticator'>;
+declare module "passport/lib/authenticator.js" {
+  declare module.exports: $Exports<"passport/lib/authenticator">;
 }
-declare module 'passport/lib/errors/authenticationerror.js' {
-  declare module.exports: $Exports<'passport/lib/errors/authenticationerror'>;
+declare module "passport/lib/errors/authenticationerror.js" {
+  declare module.exports: $Exports<"passport/lib/errors/authenticationerror">;
 }
-declare module 'passport/lib/framework/connect.js' {
-  declare module.exports: $Exports<'passport/lib/framework/connect'>;
+declare module "passport/lib/framework/connect.js" {
+  declare module.exports: $Exports<"passport/lib/framework/connect">;
 }
-declare module 'passport/lib/http/request.js' {
-  declare module.exports: $Exports<'passport/lib/http/request'>;
+declare module "passport/lib/http/request.js" {
+  declare module.exports: $Exports<"passport/lib/http/request">;
 }
-declare module 'passport/lib/index.js' {
-  declare module.exports: $Exports<'passport/lib/index'>;
+declare module "passport/lib/index.js" {
+  declare module.exports: $Exports<"passport/lib/index">;
 }
-declare module 'passport/lib/middleware/authenticate.js' {
-  declare module.exports: $Exports<'passport/lib/middleware/authenticate'>;
+declare module "passport/lib/middleware/authenticate.js" {
+  declare module.exports: $Exports<"passport/lib/middleware/authenticate">;
 }
-declare module 'passport/lib/middleware/initialize.js' {
-  declare module.exports: $Exports<'passport/lib/middleware/initialize'>;
+declare module "passport/lib/middleware/initialize.js" {
+  declare module.exports: $Exports<"passport/lib/middleware/initialize">;
 }
-declare module 'passport/lib/sessionmanager.js' {
-  declare module.exports: $Exports<'passport/lib/sessionmanager'>;
+declare module "passport/lib/sessionmanager.js" {
+  declare module.exports: $Exports<"passport/lib/sessionmanager">;
 }
-declare module 'passport/lib/strategies/session.js' {
-  declare module.exports: $Exports<'passport/lib/strategies/session'>;
+declare module "passport/lib/strategies/session.js" {
+  declare module.exports: $Exports<"passport/lib/strategies/session">;
 }

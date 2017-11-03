@@ -13,7 +13,7 @@
  * https://github.com/flowtype/flow-typed
  */
 
-declare module 'jest' {
+declare module "jest" {
   declare module.exports: any;
 }
 
@@ -22,18 +22,18 @@ declare module 'jest' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module 'jest/bin/jest' {
+declare module "jest/bin/jest" {
   declare module.exports: any;
 }
 
-declare module 'jest/build/jest' {
+declare module "jest/build/jest" {
   declare module.exports: any;
 }
 
 // Filename aliases
-declare module 'jest/bin/jest.js' {
-  declare module.exports: $Exports<'jest/bin/jest'>;
+declare module "jest/bin/jest.js" {
+  declare module.exports: $Exports<"jest/bin/jest">;
 }
-declare module 'jest/build/jest.js' {
-  declare module.exports: $Exports<'jest/build/jest'>;
+declare module "jest/build/jest.js" {
+  declare module.exports: $Exports<"jest/build/jest">;
 }

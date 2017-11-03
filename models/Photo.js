@@ -1,5 +1,5 @@
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 const PhotoSchema = Schema({
   originalname: String,
   encoding: String,
@@ -7,7 +7,8 @@ const PhotoSchema = Schema({
   filename: String,
   size: Number,
   author: {
-    type: Schema.Types.ObjectId, ref: "User"
+    type: Schema.Types.ObjectId,
+    ref: "User"
   },
   height: Number,
   width: Number,
@@ -17,6 +18,6 @@ const PhotoSchema = Schema({
     regular: String,
     original: String
   }
-})
+});
 
-module.exports = mongoose.model("Photo", PhotoSchema)
+module.exports = mongoose.model("Photo", PhotoSchema);

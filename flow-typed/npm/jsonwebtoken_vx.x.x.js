@@ -13,7 +13,7 @@
  * https://github.com/flowtype/flow-typed
  */
 
-declare module 'jsonwebtoken' {
+declare module "jsonwebtoken" {
   declare module.exports: any;
 }
 
@@ -22,59 +22,59 @@ declare module 'jsonwebtoken' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module 'jsonwebtoken/decode' {
+declare module "jsonwebtoken/decode" {
   declare module.exports: any;
 }
 
-declare module 'jsonwebtoken/lib/JsonWebTokenError' {
+declare module "jsonwebtoken/lib/JsonWebTokenError" {
   declare module.exports: any;
 }
 
-declare module 'jsonwebtoken/lib/NotBeforeError' {
+declare module "jsonwebtoken/lib/NotBeforeError" {
   declare module.exports: any;
 }
 
-declare module 'jsonwebtoken/lib/timespan' {
+declare module "jsonwebtoken/lib/timespan" {
   declare module.exports: any;
 }
 
-declare module 'jsonwebtoken/lib/TokenExpiredError' {
+declare module "jsonwebtoken/lib/TokenExpiredError" {
   declare module.exports: any;
 }
 
-declare module 'jsonwebtoken/sign' {
+declare module "jsonwebtoken/sign" {
   declare module.exports: any;
 }
 
-declare module 'jsonwebtoken/verify' {
+declare module "jsonwebtoken/verify" {
   declare module.exports: any;
 }
 
 // Filename aliases
-declare module 'jsonwebtoken/decode.js' {
-  declare module.exports: $Exports<'jsonwebtoken/decode'>;
+declare module "jsonwebtoken/decode.js" {
+  declare module.exports: $Exports<"jsonwebtoken/decode">;
 }
-declare module 'jsonwebtoken/index' {
-  declare module.exports: $Exports<'jsonwebtoken'>;
+declare module "jsonwebtoken/index" {
+  declare module.exports: $Exports<"jsonwebtoken">;
 }
-declare module 'jsonwebtoken/index.js' {
-  declare module.exports: $Exports<'jsonwebtoken'>;
+declare module "jsonwebtoken/index.js" {
+  declare module.exports: $Exports<"jsonwebtoken">;
 }
-declare module 'jsonwebtoken/lib/JsonWebTokenError.js' {
-  declare module.exports: $Exports<'jsonwebtoken/lib/JsonWebTokenError'>;
+declare module "jsonwebtoken/lib/JsonWebTokenError.js" {
+  declare module.exports: $Exports<"jsonwebtoken/lib/JsonWebTokenError">;
 }
-declare module 'jsonwebtoken/lib/NotBeforeError.js' {
-  declare module.exports: $Exports<'jsonwebtoken/lib/NotBeforeError'>;
+declare module "jsonwebtoken/lib/NotBeforeError.js" {
+  declare module.exports: $Exports<"jsonwebtoken/lib/NotBeforeError">;
 }
-declare module 'jsonwebtoken/lib/timespan.js' {
-  declare module.exports: $Exports<'jsonwebtoken/lib/timespan'>;
+declare module "jsonwebtoken/lib/timespan.js" {
+  declare module.exports: $Exports<"jsonwebtoken/lib/timespan">;
 }
-declare module 'jsonwebtoken/lib/TokenExpiredError.js' {
-  declare module.exports: $Exports<'jsonwebtoken/lib/TokenExpiredError'>;
+declare module "jsonwebtoken/lib/TokenExpiredError.js" {
+  declare module.exports: $Exports<"jsonwebtoken/lib/TokenExpiredError">;
 }
-declare module 'jsonwebtoken/sign.js' {
-  declare module.exports: $Exports<'jsonwebtoken/sign'>;
+declare module "jsonwebtoken/sign.js" {
+  declare module.exports: $Exports<"jsonwebtoken/sign">;
 }
-declare module 'jsonwebtoken/verify.js' {
-  declare module.exports: $Exports<'jsonwebtoken/verify'>;
+declare module "jsonwebtoken/verify.js" {
+  declare module.exports: $Exports<"jsonwebtoken/verify">;
 }

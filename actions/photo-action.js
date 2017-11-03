@@ -1,38 +1,38 @@
-const Photo = require("../models/Photo")
+const Photo = require("../models/Photo");
 
 exports.get = function() {
   return new Promise((resolve, reject) => {
     Photo.find()
       .populate("author", "-password")
       .exec((err, photos) => {
-        if (err) reject(err)
+        if (err) reject(err);
 
-        resolve(photos)
-      })
-  })
-}
+        resolve(photos);
+      });
+  });
+};
 
 exports.create = function(obj) {
   return new Promise((resolve, reject) => {
-    let photo = new Photo()
-    Object.assign(photo, obj)
+    let photo = new Photo();
+    Object.assign(photo, obj);
 
     photo.save((err, photo) => {
-      if (err) reject(err)
+      if (err) reject(err);
 
-      resolve(photo)
-    })
-  })
-}
+      resolve(photo);
+    });
+  });
+};
 
 exports.find = function(obj) {
   return new Promise((resolve, reject) => {
     Photo.findOne(obj)
       .populate("author", "-password")
       .exec((err, photo) => {
-        if (err) reject(err)
+        if (err) reject(err);
 
-        resolve(photo)
-      })
-  })
-}
+        resolve(photo);
+      });
+  });
+};

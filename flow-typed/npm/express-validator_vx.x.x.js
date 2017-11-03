@@ -13,7 +13,7 @@
  * https://github.com/flowtype/flow-typed
  */
 
-declare module 'express-validator' {
+declare module "express-validator" {
   declare module.exports: any;
 }
 
@@ -22,213 +22,215 @@ declare module 'express-validator' {
  * require those files directly. Feel free to delete any files that aren't
  * needed.
  */
-declare module 'express-validator/check/check-all' {
+declare module "express-validator/check/check-all" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/check/check-body' {
+declare module "express-validator/check/check-body" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/check/check-cookies' {
+declare module "express-validator/check/check-cookies" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/check/check-headers' {
+declare module "express-validator/check/check-headers" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/check/check-params' {
+declare module "express-validator/check/check-params" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/check/check-query' {
+declare module "express-validator/check/check-query" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/check/check' {
+declare module "express-validator/check/check" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/check/index' {
+declare module "express-validator/check/index" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/check/one-of' {
+declare module "express-validator/check/one-of" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/check/runner' {
+declare module "express-validator/check/runner" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/check/select-fields' {
+declare module "express-validator/check/select-fields" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/check/validation-result' {
+declare module "express-validator/check/validation-result" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/filter/index' {
+declare module "express-validator/filter/index" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/filter/matched-data' {
+declare module "express-validator/filter/matched-data" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/filter/sanitize-all' {
+declare module "express-validator/filter/sanitize-all" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/filter/sanitize-body' {
+declare module "express-validator/filter/sanitize-body" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/filter/sanitize-cookies' {
+declare module "express-validator/filter/sanitize-cookies" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/filter/sanitize-params' {
+declare module "express-validator/filter/sanitize-params" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/filter/sanitize-query' {
+declare module "express-validator/filter/sanitize-query" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/filter/sanitize' {
+declare module "express-validator/filter/sanitize" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/lib/express_validator' {
+declare module "express-validator/lib/express_validator" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/lib/utils' {
+declare module "express-validator/lib/utils" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/tst' {
+declare module "express-validator/tst" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/utils/constants' {
+declare module "express-validator/utils/constants" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/utils/format-param-output' {
+declare module "express-validator/utils/format-param-output" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/utils/make-sanitizer' {
+declare module "express-validator/utils/make-sanitizer" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/utils/map-extend' {
+declare module "express-validator/utils/map-extend" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/utils/replace-args' {
+declare module "express-validator/utils/replace-args" {
   declare module.exports: any;
 }
 
-declare module 'express-validator/utils/to-string' {
+declare module "express-validator/utils/to-string" {
   declare module.exports: any;
 }
 
 // Filename aliases
-declare module 'express-validator/check/check-all.js' {
-  declare module.exports: $Exports<'express-validator/check/check-all'>;
+declare module "express-validator/check/check-all.js" {
+  declare module.exports: $Exports<"express-validator/check/check-all">;
 }
-declare module 'express-validator/check/check-body.js' {
-  declare module.exports: $Exports<'express-validator/check/check-body'>;
+declare module "express-validator/check/check-body.js" {
+  declare module.exports: $Exports<"express-validator/check/check-body">;
 }
-declare module 'express-validator/check/check-cookies.js' {
-  declare module.exports: $Exports<'express-validator/check/check-cookies'>;
+declare module "express-validator/check/check-cookies.js" {
+  declare module.exports: $Exports<"express-validator/check/check-cookies">;
 }
-declare module 'express-validator/check/check-headers.js' {
-  declare module.exports: $Exports<'express-validator/check/check-headers'>;
+declare module "express-validator/check/check-headers.js" {
+  declare module.exports: $Exports<"express-validator/check/check-headers">;
 }
-declare module 'express-validator/check/check-params.js' {
-  declare module.exports: $Exports<'express-validator/check/check-params'>;
+declare module "express-validator/check/check-params.js" {
+  declare module.exports: $Exports<"express-validator/check/check-params">;
 }
-declare module 'express-validator/check/check-query.js' {
-  declare module.exports: $Exports<'express-validator/check/check-query'>;
+declare module "express-validator/check/check-query.js" {
+  declare module.exports: $Exports<"express-validator/check/check-query">;
 }
-declare module 'express-validator/check/check.js' {
-  declare module.exports: $Exports<'express-validator/check/check'>;
+declare module "express-validator/check/check.js" {
+  declare module.exports: $Exports<"express-validator/check/check">;
 }
-declare module 'express-validator/check/index.js' {
-  declare module.exports: $Exports<'express-validator/check/index'>;
+declare module "express-validator/check/index.js" {
+  declare module.exports: $Exports<"express-validator/check/index">;
 }
-declare module 'express-validator/check/one-of.js' {
-  declare module.exports: $Exports<'express-validator/check/one-of'>;
+declare module "express-validator/check/one-of.js" {
+  declare module.exports: $Exports<"express-validator/check/one-of">;
 }
-declare module 'express-validator/check/runner.js' {
-  declare module.exports: $Exports<'express-validator/check/runner'>;
+declare module "express-validator/check/runner.js" {
+  declare module.exports: $Exports<"express-validator/check/runner">;
 }
-declare module 'express-validator/check/select-fields.js' {
-  declare module.exports: $Exports<'express-validator/check/select-fields'>;
+declare module "express-validator/check/select-fields.js" {
+  declare module.exports: $Exports<"express-validator/check/select-fields">;
 }
-declare module 'express-validator/check/validation-result.js' {
-  declare module.exports: $Exports<'express-validator/check/validation-result'>;
+declare module "express-validator/check/validation-result.js" {
+  declare module.exports: $Exports<"express-validator/check/validation-result">;
 }
-declare module 'express-validator/filter/index.js' {
-  declare module.exports: $Exports<'express-validator/filter/index'>;
+declare module "express-validator/filter/index.js" {
+  declare module.exports: $Exports<"express-validator/filter/index">;
 }
-declare module 'express-validator/filter/matched-data.js' {
-  declare module.exports: $Exports<'express-validator/filter/matched-data'>;
+declare module "express-validator/filter/matched-data.js" {
+  declare module.exports: $Exports<"express-validator/filter/matched-data">;
 }
-declare module 'express-validator/filter/sanitize-all.js' {
-  declare module.exports: $Exports<'express-validator/filter/sanitize-all'>;
+declare module "express-validator/filter/sanitize-all.js" {
+  declare module.exports: $Exports<"express-validator/filter/sanitize-all">;
 }
-declare module 'express-validator/filter/sanitize-body.js' {
-  declare module.exports: $Exports<'express-validator/filter/sanitize-body'>;
+declare module "express-validator/filter/sanitize-body.js" {
+  declare module.exports: $Exports<"express-validator/filter/sanitize-body">;
 }
-declare module 'express-validator/filter/sanitize-cookies.js' {
-  declare module.exports: $Exports<'express-validator/filter/sanitize-cookies'>;
+declare module "express-validator/filter/sanitize-cookies.js" {
+  declare module.exports: $Exports<"express-validator/filter/sanitize-cookies">;
 }
-declare module 'express-validator/filter/sanitize-params.js' {
-  declare module.exports: $Exports<'express-validator/filter/sanitize-params'>;
+declare module "express-validator/filter/sanitize-params.js" {
+  declare module.exports: $Exports<"express-validator/filter/sanitize-params">;
 }
-declare module 'express-validator/filter/sanitize-query.js' {
-  declare module.exports: $Exports<'express-validator/filter/sanitize-query'>;
+declare module "express-validator/filter/sanitize-query.js" {
+  declare module.exports: $Exports<"express-validator/filter/sanitize-query">;
 }
-declare module 'express-validator/filter/sanitize.js' {
-  declare module.exports: $Exports<'express-validator/filter/sanitize'>;
+declare module "express-validator/filter/sanitize.js" {
+  declare module.exports: $Exports<"express-validator/filter/sanitize">;
 }
-declare module 'express-validator/index' {
-  declare module.exports: $Exports<'express-validator'>;
+declare module "express-validator/index" {
+  declare module.exports: $Exports<"express-validator">;
 }
-declare module 'express-validator/index.js' {
-  declare module.exports: $Exports<'express-validator'>;
+declare module "express-validator/index.js" {
+  declare module.exports: $Exports<"express-validator">;
 }
-declare module 'express-validator/lib/express_validator.js' {
-  declare module.exports: $Exports<'express-validator/lib/express_validator'>;
+declare module "express-validator/lib/express_validator.js" {
+  declare module.exports: $Exports<"express-validator/lib/express_validator">;
 }
-declare module 'express-validator/lib/utils.js' {
-  declare module.exports: $Exports<'express-validator/lib/utils'>;
+declare module "express-validator/lib/utils.js" {
+  declare module.exports: $Exports<"express-validator/lib/utils">;
 }
-declare module 'express-validator/tst.js' {
-  declare module.exports: $Exports<'express-validator/tst'>;
+declare module "express-validator/tst.js" {
+  declare module.exports: $Exports<"express-validator/tst">;
 }
-declare module 'express-validator/utils/constants.js' {
-  declare module.exports: $Exports<'express-validator/utils/constants'>;
+declare module "express-validator/utils/constants.js" {
+  declare module.exports: $Exports<"express-validator/utils/constants">;
 }
-declare module 'express-validator/utils/format-param-output.js' {
-  declare module.exports: $Exports<'express-validator/utils/format-param-output'>;
+declare module "express-validator/utils/format-param-output.js" {
+  declare module.exports: $Exports<
+    "express-validator/utils/format-param-output"
+  >;
 }
-declare module 'express-validator/utils/make-sanitizer.js' {
-  declare module.exports: $Exports<'express-validator/utils/make-sanitizer'>;
+declare module "express-validator/utils/make-sanitizer.js" {
+  declare module.exports: $Exports<"express-validator/utils/make-sanitizer">;
 }
-declare module 'express-validator/utils/map-extend.js' {
-  declare module.exports: $Exports<'express-validator/utils/map-extend'>;
+declare module "express-validator/utils/map-extend.js" {
+  declare module.exports: $Exports<"express-validator/utils/map-extend">;
 }
-declare module 'express-validator/utils/replace-args.js' {
-  declare module.exports: $Exports<'express-validator/utils/replace-args'>;
+declare module "express-validator/utils/replace-args.js" {
+  declare module.exports: $Exports<"express-validator/utils/replace-args">;
 }
-declare module 'express-validator/utils/to-string.js' {
-  declare module.exports: $Exports<'express-validator/utils/to-string'>;
+declare module "express-validator/utils/to-string.js" {
+  declare module.exports: $Exports<"express-validator/utils/to-string">;
 }

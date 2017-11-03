@@ -1,71 +1,64 @@
 //@flow
-const Article = require("../models/Article")
+const Article = require("../models/Article");
 
 type ArticleType = {
   title?: string,
   slug?: string,
   author?: number,
   data?: Array<mixed>
-}
+};
 
 exports.get = function(): Promise<any> {
   return new Promise((resolve, reject) => {
     Article.find()
       .populate("author", "_id username name avatar")
       .exec((err, articles) => {
-        if (err) reject(err)
+        if (err) reject(err);
 
-        resolve(articles)
-      })
-  })
-}
+        resolve(articles);
+      });
+  });
+};
 
 exports.find = function(obj: ArticleType): Promise<any> {
   return new Promise((resolve, reject) => {
     Article.findOne(obj)
-      .populate('author','-password')
+      .populate("author", "-password")
       .exec((err, article) => {
-        if (err) reject(err)
+        if (err) reject(err);
 
-        resolve(article)
-    })
-  })
-}
+        resolve(article);
+      });
+  });
+};
 
-exports.create = function(
-  payload: {
-    title: string,
-    author: number,
-    slug: string,
-    data: Array<mixed>
-  }
-): Promise<any> {
+exports.create = function(payload: {
+  title: string,
+  author: number,
+  slug: string,
+  data: Array<mixed>
+}): Promise<any> {
   return new Promise((resolve, reject) => {
-    const article = new Article()
+    const article = new Article();
 
-    article.title = payload.title
-    article.author = payload.author
-    article.slug = payload.slug
-    article.data = payload.data
+    article.title = payload.title;
+    article.author = payload.author;
+    article.slug = payload.slug;
+    article.data = payload.data;
 
-    article.save(err => err ? reject(err) : resolve(article))
-  })
-}
+    article.save(err => (err ? reject(err) : resolve(article)));
+  });
+};
 
-exports.destroy = function(
-  obj: {
-    _id?: string,
-    slug?: string
-  }
-): Promise<any> {
+exports.destroy = function(obj: { _id?: string, slug?: string }): Promise<any> {
   return new Promise((resolve, reject) => {
     Article.remove(obj, (err, article) => {
-      if (err) reject(err)
+      if (err) reject(err);
 
-      resolve(article)
-    })
-  })
-}
+      resolve(article);
+    });
+  });
+};
 
 exports.update = function(
   obj: ArticleType,
@@ -73,10 +66,10 @@ exports.update = function(
 ): Promise<any> {
   return new Promise((resolve, reject) => {
     Article.findOne(obj, (err, article) => {
-      if (err) reject(err)
+      if (err) reject(err);
 
-      const updatedArticle = Object.assign(article, objToChange)
-      updatedArticle.save(err => err ? reject(err) : resolve(updatedArticle))
-    })
-  })
-}
+      const updatedArticle = Object.assign(article, objToChange);
+      updatedArticle.save(err => (err ? reject(err) : resolve(updatedArticle)));
+    });
+  });
+};
